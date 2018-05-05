@@ -4,7 +4,7 @@ import numpy as np
 
 
 class TrustRegion:
-    def __init__(self, f, g, h, c, gc, m):
+    def __init__(self, f, g, h, c, gc, m, mu):
         self.p = 0
         self.func = f
         self.grad = g
@@ -13,6 +13,7 @@ class TrustRegion:
         self.gradContraint = gc  # function
         self.function = Functions()
         self.merit = m
+        self.mu = mu
 
     def solve_tr(self, g, B, Delta, tol, trace):
         p = 0
